@@ -1,0 +1,37 @@
+<div class="form-container">
+  <form [formGroup]="compradorForm" (ngSubmit)="enviarFormulario()">
+    <div class="p-fluid form-content">
+      <div class="p-field">
+        <label for="nome">Nome do Comprador</label>
+        <input id="nome" type="text" pInputText formControlName="nome" />
+        <div *ngIf="compradorForm.get('nome')?.invalid && compradorForm.get('nome')?.touched" class="p-error">
+          Nome do comprador é obrigatório
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="cpf">CPF</label>
+        <input id="cpf" type="text" pInputText formControlName="cpf" />
+        <div *ngIf="compradorForm.get('cpf')?.invalid && compradorForm.get('cpf')?.touched" class="p-error">
+          CPF inválido ou obrigatório
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="endereco">Endereço</label>
+        <input id="endereco" type="text" pInputText formControlName="endereco" />
+        <div *ngIf="compradorForm.get('endereco')?.invalid && compradorForm.get('endereco')?.touched" class="p-error">
+          Endereço obrigatório
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" type="text" pInputText formControlName="telefone" />
+        <div *ngIf="compradorForm.get('telefone')?.invalid && compradorForm.get('telefone')?.touched" class="p-error">
+          Telefone inválido ou obrigatório
+        </div>
+      </div>
+      <div class="p-field">
+        <button pButton type="submit" label="Cadastrar" [disabled]="compradorForm.invalid"></button>
+      </div>
+    </div>
+  </form>
+</div>

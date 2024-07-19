@@ -1,0 +1,27 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-content {
+    width: 400px; /* Ajuste a largura conforme necessário */
+  }
+  
+  .p-field {
+    margin-bottom: 1rem;
+  }
+  
+  .p-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem; /* Alinhado ao padrão de fonte do PrimeNG */
+    font-weight: 700; /* Pode ajustar o peso da fonte conforme necessário */
+  }
+  
+  .p-error {
+    color: red;
+    font-size: 0.8em;
+  }
+  

@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'produtos', loadChildren: () => import('./components/produto/produto.module').then(m => m.ProdutoModule) },
   { path: 'listar', loadChildren: () => import('./components/produto/produto.module').then(m => m.ProdutoModule) },
   { path: 'fornecedores', loadChildren: () => import('./components/fornecedor/fornecedor.module').then(m => m.FornecedorModule) },
+  { path: 'comprador', loadChildren: () => import('./components/comprador/comprador.module').then(m => m.CompradorModule) },
   { path: '**', redirectTo: '/home' }
 ];
 

@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { PedidoModule } from './components/pedido/pedido.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { InputTextModule } from 'primeng/inputtext';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ButtonModule,
     TabMenuModule,
     PedidoModule,
-    HttpClientModule
+    HttpClientModule,
+    ToggleButtonModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

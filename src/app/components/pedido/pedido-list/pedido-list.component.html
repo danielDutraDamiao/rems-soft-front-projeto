@@ -1,22 +1,56 @@
-
 <div class="card">
-    <p-treeTable [value]="files" [scrollable]="true" [tableStyle]="{'min-width':'50rem'}">
+    <p-table [value]="pedidos" dataKey="id" [tableStyle]="{ 'min-width': '60rem' }">
         <ng-template pTemplate="header">
             <tr>
-                <th>Name</th>
-                <th>Size</th>
-                <th>Type</th>
+                <th style="width: 5rem"></th>
+                <th pSortableColumn="numeroPedido">Número do Pedido <p-sortIcon field="numeroPedido"></p-sortIcon></th>
+                <th pSortableColumn="valorTotalPedido">Valor Total <p-sortIcon field="valorTotalPedido"></p-sortIcon></th>
+                <th>Nome do Fornecedor</th>
+                <th pSortableColumn="totalProdutosComprados">Total Produtos <p-sortIcon field="totalProdutosComprados"></p-sortIcon></th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
-            <tr [ttRow]="rowNode">
+        <ng-template pTemplate="body" let-pedido let-expanded="expanded">
+            <tr>
                 <td>
-                    <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
-                    {{ rowData.name }}
+                    <button type="button" pButton pRipple [pRowToggler]="pedido" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
                 </td>
-                <td>{{ rowData.size }}</td>
-                <td>{{ rowData.type }}</td>
+                <td>{{ pedido.numeroPedido }}</td>
+                <td>{{ pedido.valorTotalPedido | currency: 'BRL' }}</td>
+                <td>{{ pedido.nomeFornecedor }}</td>
+                <td>{{ pedido.totalProdutosComprados }}</td>
             </tr>
         </ng-template>
-    </p-treeTable>
+        <ng-template pTemplate="rowexpansion" let-pedido>
+            <tr>
+                <td colspan="5">
+                    <div class="p-3">
+                        <p-table [value]="pedido.produtos" dataKey="id">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+                                    <th pSortableColumn="nomeProduto">Nome do Produto <p-sortIcon field="nomeProduto"></p-sortIcon></th>
+                                    <th pSortableColumn="valorProduto">Valor <p-sortIcon field="valorProduto"></p-sortIcon></th>
+                                    <th pSortableColumn="quantidade">Quantidade <p-sortIcon field="quantidade"></p-sortIcon></th>
+                                    <th>Fornecedor</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-produto>
+                                <tr>
+                                    <td>{{ produto.id }}</td>
+                                    <td>{{ produto.nomeProduto }}</td>
+                                    <td>{{ produto.valorProduto | currency: 'BRL' }}</td>
+                                    <td>{{ produto.fornecedor.nome }}</td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="emptymessage">
+                                <tr>
+                                    <td colspan="5">Nenhum produto encontrado para este pedido.</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
 </div>

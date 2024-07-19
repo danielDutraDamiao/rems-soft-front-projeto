@@ -1,14 +1,14 @@
 // pedido.routing.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PedidoListComponent } from './pedido-list/pedido-list.component';
+import { ProdutoEditComponent } from './produto-edit/produto-edit.component';
 
 const routes: Routes = [
-  { path: '', component: PedidoListComponent }  // Rotas internas do módulo Pedido
+  { path: '', component: ProdutoEditComponent}  // Rotas internas do módulo Pedido
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PedidoRouting { }
+export class ProdutoRouting { }

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { PedidoModule } from './components/pedido/pedido.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TabMenuModule } from 'primeng/tabmenu';
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    TabMenuModule
+    TabMenuModule,
+    PedidoModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

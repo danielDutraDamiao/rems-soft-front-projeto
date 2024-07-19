@@ -1,0 +1,38 @@
+<div class="form-container">
+    <form [formGroup]="produtoForm" (ngSubmit)="enviarFormulario()">
+      <div class="p-fluid form-content">
+        <div class="p-field">
+          <label for="nomeProduto">Nome do Produto</label>
+          <input id="nomeProduto" type="text" pInputText formControlName="nomeProduto" />
+          <div *ngIf="produtoForm.get('nomeProduto')?.invalid && produtoForm.get('nomeProduto')?.touched" class="p-error">
+            Nome do produto é obrigatório
+          </div>
+        </div>
+        <div class="p-field">
+          <label for="valorProduto">Valor do Produto</label>
+          <input id="valorProduto" type="number" pInputText formControlName="valorProduto" />
+          <div *ngIf="produtoForm.get('valorProduto')?.invalid && produtoForm.get('valorProduto')?.touched" class="p-error">
+            Valor do produto é obrigatório e deve ser positivo
+          </div>
+        </div>
+        <div class="p-field">
+          <label for="quantidade">Quantidade</label>
+          <input id="quantidade" type="number" pInputText formControlName="quantidade" />
+          <div *ngIf="produtoForm.get('quantidade')?.invalid && produtoForm.get('quantidade')?.touched" class="p-error">
+            Quantidade é obrigatória e deve ser positiva
+          </div>
+        </div>
+        <div class="p-field">
+          <label for="fornecedorId">ID do Fornecedor</label>
+          <input id="fornecedorId" type="text" pInputText formControlName="fornecedorId" />
+          <div *ngIf="produtoForm.get('fornecedorId')?.invalid && produtoForm.get('fornecedorId')?.touched" class="p-error">
+            ID do fornecedor é obrigatório
+          </div>
+        </div>
+        <div class="p-field">
+          <button pButton type="submit" label="Cadastrar" [disabled]="produtoForm.invalid"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

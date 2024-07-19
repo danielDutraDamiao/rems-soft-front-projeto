@@ -17,9 +17,11 @@ export class AppComponent implements OnInit {
     this.items = [
       { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: '/' },
       { label: 'Pedidos', icon: 'pi pi-fw pi-calendar', routerLink: '/pedido' },
-      { label: 'Produtos', icon: 'pi pi-fw pi-pencil', routerLink: '/produtos' },
+      { label: 'Produtos', icon: 'pi pi-fw pi-pencil', routerLink: '/produtos/edit' },
+      { label: 'Listar Produtos', icon: 'pi pi-fw pi-list', routerLink: '/produtos/listar' },
       { label: 'Compradores', icon: 'pi pi-fw pi-file', routerLink: '/compradores' },
-      { label: 'Fornecedores', icon: 'pi pi-fw pi-cog', routerLink: '/fornecedores' }
+      { label: 'Fornecedores', icon: 'pi pi-fw pi-cog', routerLink: '/fornecedores/edit' },
+      { label: 'Listar Fornecedores', icon: 'pi pi-fw pi-list', routerLink: '/fornecedores/listar' }
     ];
   }
 }

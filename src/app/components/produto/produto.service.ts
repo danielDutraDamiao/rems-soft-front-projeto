@@ -15,14 +15,14 @@ export class ProdutoService {
         this.urlService = "http://localhost:8080/api/produto";
     }
 
-    buscarproduto(): Observable<ProdutoDTO[]> {
+    buscarProduto(): Observable<ProdutoDTO[]> {
         console.log("produto Service");
         const url = `${this.urlService}/listar`; // Adiciona o /listar ao endpoint
         return this.http.get<ProdutoDTO[]>(url);
     }
 
     criarProduto(produtoData: any): Observable<ProdutoDTO> {
-        const url = `${this.urlService}/cadastrar`;
+        const url = `${this.urlService}/inserir-produto`;
         return this.http.post<ProdutoDTO>(url, produtoData);
     }
 

@@ -8,27 +8,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { ToggleButtonModule } from 'primeng/togglebutton';
-import { ProdutoEditComponent } from './produto-edit/produto-edit.component';
-import { ProdutoRouting } from './produto.routing';
-import { ProdutoService } from './produto.service';
+import { FornecedorEditComponent } from './fornecedor-edit/fornecedor-edit.component';
+import { FornecedorRouting } from './fornecedor.routing';
+import { FornecedorService } from './fornecedor.service';
 import { MessagesModule } from 'primeng/messages';
 import { InputTextModule } from 'primeng/inputtext';
 import { DataViewModule } from 'primeng/dataview';
 import { ToastModule } from 'primeng/toast';
-import { ProdutoListComponent } from './produto-list/produto-list.component';
+import { FornecedorListComponent } from './fornecedor-list/fornecedor-list.component';
 
 
 
 @NgModule({
   declarations: [
-    ProdutoEditComponent,
-    ProdutoListComponent
+    FornecedorEditComponent,
+    FornecedorListComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
-    ProdutoRouting,
+    FornecedorRouting,
     ButtonModule,
     TreeTableModule,
     HttpClientModule,
@@ -43,10 +43,10 @@ import { ProdutoListComponent } from './produto-list/produto-list.component';
     
   ],
 exports: [
-  ProdutoEditComponent,
-  ProdutoListComponent
+  FornecedorEditComponent,
+  FornecedorListComponent
 ],
-providers: [ProdutoService],
-bootstrap: [ProdutoEditComponent, ProdutoListComponent]
+providers: [FornecedorService],
+bootstrap: [FornecedorEditComponent, FornecedorListComponent]
 })
-export class ProdutoModule { }
+export class FornecedorModule { }

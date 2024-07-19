@@ -11,9 +11,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 export class ProdutoEditComponent implements OnInit {
 
     produtoForm: FormGroup;
-    messages: Message[] | undefined;
+    messages: Message[] = [];
     value: string | undefined;
-    value2: string | undefined;
 
     constructor(private produtoService: ProdutoService) { 
 
@@ -33,8 +32,7 @@ export class ProdutoEditComponent implements OnInit {
      enviarFormulario() {
         if (this.produtoForm.valid) {
             const produtoData = {
-                ...this.produtoForm.value,
-                precoProduto: 0
+                ...this.produtoForm.value
             };
     
             this.produtoService.criarProduto(produtoData).subscribe(

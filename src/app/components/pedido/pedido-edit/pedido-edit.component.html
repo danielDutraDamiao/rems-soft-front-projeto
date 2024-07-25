@@ -1,0 +1,41 @@
+<div class="form-container">
+    <form [formGroup]="pedidoForm" (ngSubmit)="enviarFormulario()">
+      <div class="p-fluid form-content">
+        <h5>Registre o Pedido!</h5>
+        
+        <div class="p-field">
+          <label for="produtos">Produtos</label>
+          <p-multiSelect 
+            [options]="produtos" 
+            [(ngModel)]="selectedProdutos" 
+            optionLabel="nomeProduto" 
+            formControlName="produtoIds" 
+            [showToggleAll]="false"
+            placeholder="Selecione os produtos" 
+            [filter]="true">
+          </p-multiSelect>
+          <div *ngIf="pedidoForm.get('produtoIds')?.invalid && pedidoForm.get('produtoIds')?.touched" class="p-error">
+            Selecione pelo menos um produto
+          </div>
+        </div>
+        
+        <div class="p-field">
+          <label for="compradorId">Comprador</label>
+          <p-dropdown 
+            [options]="compradores" 
+            optionLabel="nome" 
+            formControlName="compradorId">
+          </p-dropdown>
+          <div *ngIf="pedidoForm.get('compradorId')?.invalid && pedidoForm.get('compradorId')?.touched" class="p-error">
+            Selecione um comprador
+          </div>
+        </div>
+        
+        <div class="p-field">
+          <button pButton label="Cadastrar" type="submit" [disabled]="pedidoForm.invalid"></button>
+          <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
+        </div>
+      </div>
+    </form>
+  </div>
+  

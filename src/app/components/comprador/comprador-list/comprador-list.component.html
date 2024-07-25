@@ -1,30 +1,29 @@
 <div class="card">
-    <p-table [value]="compradores" dataKey="cpf" [tableStyle]="{ 'min-width': '60rem' }">
+  <p-table [value]="compradores" dataKey="cpf" [tableStyle]="{ 'min-width': '60rem' }">
       <ng-template pTemplate="header">
-        <tr>
-          <th style="width: 5rem"></th>
-          <th pSortableColumn="cpf">CPF <p-sortIcon field="cpf"></p-sortIcon></th>
-          <th>Nome do Comprador</th>
-          <th>Endereço</th>
-          <th>Telefone</th>
-        </tr>
+          <tr>
+              <th style="width: 5rem"></th>
+              <th pSortableColumn="cpf">CPF <p-sortIcon field="cpf"></p-sortIcon></th>
+              <th pSortableColumn="nome">Nome do Comprador <p-sortIcon field="nome"></p-sortIcon></th>
+              <th pSortableColumn="endereco">Endereço <p-sortIcon field="endereco"></p-sortIcon></th>
+              <th pSortableColumn="telefone">Telefone <p-sortIcon field="telefone"></p-sortIcon></th>
+          </tr>
       </ng-template>
       <ng-template pTemplate="body" let-comprador>
-        <tr>
-          <td>
-            <button type="button" pButton pRipple [pRowToggler]="comprador" class="p-button-text p-button-rounded p-button-plain" [icon]="comprador ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
-          </td>
-          <td>{{ comprador.cpf }}</td>
-          <td>{{ comprador.nome }}</td>
-          <td>{{ comprador.endereco }}</td>
-          <td>{{ comprador.telefone }}</td>
-        </tr>
+          <tr>
+              <td>
+                  <button type="button" pButton pRipple [pRowToggler]="comprador" class="p-button-text p-button-rounded p-button-plain" [icon]="comprador.expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+              </td>
+              <td>{{ comprador.cpf }}</td>
+              <td>{{ comprador.nome }}</td>
+              <td>{{ comprador.endereco }}</td>
+              <td>{{ comprador.telefone }}</td>
+          </tr>
       </ng-template>
       <ng-template pTemplate="emptymessage">
-        <tr>
-          <td colspan="5">Nenhum comprador encontrado.</td>
-        </tr>
+          <tr>
+              <td colspan="5">Nenhum comprador encontrado.</td>
+          </tr>
       </ng-template>
-    </p-table>
-  </div>
-  
+  </p-table>
+</div>

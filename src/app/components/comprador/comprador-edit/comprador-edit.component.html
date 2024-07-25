@@ -31,6 +31,7 @@
       </div>
       <div class="p-field">
         <button pButton type="submit" label="Cadastrar" [disabled]="compradorForm.invalid"></button>
+        <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
       </div>
     </div>
   </form>

@@ -4,6 +4,7 @@
             <tr>
                 <th style="width: 5rem"></th>
                 <th pSortableColumn="id">Número do Produto <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="id">Nome do Produto <p-sortIcon field="id"></p-sortIcon></th>
                 <th pSortableColumn="valorProduto">Valor Total <p-sortIcon field="valorProduto"></p-sortIcon></th>
                 <th>Nome do Fornecedor</th>
                 <th pSortableColumn="quantidade">Total Produtos <p-sortIcon field="quantidade"></p-sortIcon></th>
@@ -15,6 +16,7 @@
                     <button type="button" pButton pRipple [pRowToggler]="produto" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
                 </td>
                 <td>{{ produto.id }}</td>
+                <td> {{ produto.nomeProduto }}</td>
                 <td>{{ produto.valorProduto | currency: 'BRL' }}</td>
                 <td>{{ produto.nomeFornecedor}}</td>
                 <td>{{ produto.quantidade }}</td>
